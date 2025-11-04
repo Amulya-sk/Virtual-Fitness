@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Virtual Fitness</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body class="register-bg">
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="reg.html" aria-current="page">Register</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="register-container" aria-label="Register Section">
+      <form class="register-form" id="signup-form" autocomplete="on">
+        <h2>Create Your Account</h2>
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required aria-required="true" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required aria-required="true" />
+        </div>
+        <div class="form-group">
+          <label for="password">Set Password:</label>
+          <input type="password" id="password" name="password" required aria-required="true" autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required aria-required="true" autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Sign Up" />
+        </div>
+        <div class="login-link">
+          Already registered? <a href="login.html">Login here</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Virtual Fitness | <a href="mailto:info@virtualfitness.com">Contact Us</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('signup-form').addEventListener('submit', function (event) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const dob = document.getElementById('dob').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirm-password').value.trim();
+        if (!name || !email || !dob || !password || !confirmPassword) {
+          alert('Please fill out all fields.');
+          event.preventDefault();
+          return;
+        }
+        if (password !== confirmPassword) {
+          alert('Passwords do not match.');
+          event.preventDefault();
+          return;
+        }
+        // Save user to localStorage using email as the key
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        // Prevent duplicate registration
+        if (users.some(u => u.email === email)) {
+          alert('This email is already registered.');
+          event.preventDefault();
+          return;
+        }
+        users.push({ email: email, password: password, name: name, dob: dob });
+        localStorage.setItem('users', JSON.stringify(users));
+        alert(`Thank you for signing up, ${name}! You can now log in.`);
+        event.preventDefault();
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>

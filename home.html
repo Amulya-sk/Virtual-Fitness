@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Virtual Fitness</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body class="home-bg">
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html" aria-current="page">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="reg.html">Register</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+    </ul>
+  </nav>
+  <main>
+    <header class="main-header">
+      <h1>Welcome to Virtual Fitness Classes</h1>
+      <a href="schedule.html" class="main-btn">View Schedule & Contact</a>
+    </header>
+    <section id="classes" aria-label="Our Classes">
+      <h2 class="section-title"><marquee>OUR CLASSES</marquee></h2>
+      <div class="class-list">
+        <article class="class-card">
+          <h2>Yoga</h2>
+          <p>Join our yoga classes to improve flexibility and mindfulness.</p>
+          <p>Come give yourself a break from your busy schedule and join our yoga classes.</p>
+          <p>Yoga is a holistic practice that focuses on physical poses, breathing exercises, and meditation techniques.</p>
+          <p>Our experienced instructors will guide you through various yoga poses to improve flexibility, strength, and mental well-being.</p>
+        </article>
+        <article class="class-card">
+          <h2>Zumba</h2>
+          <p>Love dance and want to stay fit? Join our Zumba classes!</p>
+          <p>Zumba is a high-energy dance fitness program that combines Latin and international music with dance moves.</p>
+          <p>Our enthusiastic instructors will lead you through fun and dynamic routines that will help you burn calories, improve cardiovascular health, and boost your mood.</p>
+        </article>
+        <article class="class-card">
+          <h2>Stretches</h2>
+          <p>Strengthen and tone your body with our stretches class.</p>
+          <p>Stretches are essential for maintaining flexibility, preventing injuries, and improving overall mobility.</p>
+          <p>Our stretches class includes a variety of stretching exercises targeting different muscle groups to help you feel more relaxed and energized.</p>
+        </article>
+      </div>
+    </section>
+    <section id="signup" class="signup-section" aria-label="Sign Up for Updates">
+      <h2>Sign Up for Updates</h2>
+      <form id="signup-form" autocomplete="on">
+        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
+        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" autocomplete="email" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Virtual Fitness | <a href="mailto:info@virtualfitness.com">Contact Us</a></p>
+  </footer>
+  <script src="home.js"></script>
+</body>
+</html>

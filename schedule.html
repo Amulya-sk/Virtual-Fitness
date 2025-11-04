@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schedule | Virtual Fitness</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body class="schedule-bg">
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="reg.html">Register</a></li>
+      <li><a href="schedule.html" aria-current="page">Schedule</a></li>
+    </ul>
+  </nav>
+  <main>
+    <header class="main-header">
+      <h1>Class Schedule & Contact</h1>
+      <a href="home.html" class="main-btn">← Back to Home</a>
+    </header>
+    <section id="schedule" aria-label="Class Schedule">
+      <h2>Schedule</h2>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th scope="col">Class</th>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yoga</td>
+            <td>Monday</td>
+            <td>6:00am - 7:00am</td>
+          </tr>
+          <tr>
+            <td>Zumba</td>
+            <td>Wednesday</td>
+            <td>5:00pm - 6:00pm</td>
+          </tr>
+          <tr>
+            <td>Stretches</td>
+            <td>Friday</td>
+            <td>8:00am - 9:00am</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="contact" class="contact-section" aria-label="Contact Us">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:Virtualfitness@gmail.com">Virtualfitness@gmail.com</a></p>
+      <p>Phone: 9896754241</p>
+    </section>
+    <button id="logout-btn" class="logout-btn">Logout</button>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Virtual Fitness | Timings are flexible on request.</p>
+  </footer>
+  <script>
+    document.getElementById('logout-btn').addEventListener('click', function () {
+      // Optionally clear sessionStorage or any login flag
+      // sessionStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
